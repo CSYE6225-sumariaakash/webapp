@@ -5,7 +5,7 @@ CSYE-6225 Akash Sumaria webapp.
 
 
 Reference API documentation
-Swaggerhub: https://app.swaggerhub.com/apis-docs/fall2022-csye6225/cloud-native-webapp/assignment-01. 
+Swaggerhub: https://app.swaggerhub.com/apis-docs/fall2022-csye6225/cloud-native-webapp/assignment-02. 
 
 Requirements
 All API request/response payloads should be in JSON.
