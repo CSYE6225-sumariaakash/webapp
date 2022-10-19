@@ -1,7 +1,7 @@
 # webapp
 CSYE-6225 Akash Sumaria webapp.
 
-# NUID : 001568622 Akash
+# NUID : 001568622 Akash Sumaria
 
 
 Reference API documentation
