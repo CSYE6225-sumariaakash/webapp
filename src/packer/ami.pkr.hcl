@@ -41,12 +41,12 @@ source "amazon-ebs" "my-ami" {
   ssh_username  = "${var.ssh_username}"
   subnet_id     = "${var.subnet_id}"
 
-  launch_block_device_mappings {
-    delete_on_termination = true
-    device_name           = "/dev/sda1"
-    volume_size           = 8
-    volume_type           = "gp2"
-  }
+  // launch_block_device_mappings {
+  //   delete_on_termination = true
+  //   device_name           = "/dev/sda1"
+  //   volume_size           = 8
+  //   volume_type           = "gp2"
+  // }
 }
 
 build {
