@@ -18,5 +18,14 @@ describe('healthz', () =>{
                     done();
                 });
         });
+        it("Return status code 200 OK", (done) => {
+            chai.request(app)
+            .get("/health")
+                .end((err, response) => {
+                    if(err) done(err);
+                    expect(response).to.have.status(404);
+                    done();
+                });
+        });
     });
 });
