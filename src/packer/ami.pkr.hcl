@@ -3,6 +3,17 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
+variable "AWS_ACCESS_KEY" {
+  type    = string
+  default = ""
+}
+
+variable "AWS_SECRET_KEY" {
+  type    = string
+  default = ""
+}
+
+
 variable "source_ami" {
   type    = string
   default = "ami-08c40ec9ead489470" # Ubuntu 22.04 LTS
@@ -29,12 +40,13 @@ source "amazon-ebs" "my-ami" {
   ami_regions = [
     "us-east-1",
   ]
+  access_key    = "${var.AWS_ACCESS_KEY}"
+  secret_key    = "${var.AWS_SECRET_KEY}"
 
-  aws_polling {
-    delay_seconds = 120
-    max_attempts  = 50
-  }
-
+  // aws_polling {
+  //   delay_seconds = 120
+  //   max_attempts  = 50
+  // }
 
   instance_type = "t2.micro"
   source_ami    = "${var.source_ami}"
