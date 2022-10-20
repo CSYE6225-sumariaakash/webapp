@@ -3,7 +3,7 @@
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
         "aws_region": "us-east-1",
-        "subnet_id": "subnet-0c044b074207ac98a",
+        "subnet_id": "subnet-0a1c4f70e57e69a41",
         "source_ami": "ami-08c40ec9ead489470",
         "ssh_username": "ubuntu"
     },
