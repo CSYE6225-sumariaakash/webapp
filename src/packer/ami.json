@@ -3,7 +3,7 @@
         "AWS_ACCESS_KEY": "",
         "AWS_SECRET_KEY": "",
         "aws_region": "us-east-1",
-        "subnet_id": "subnet-0a1c4f70e57e69a41",
+        "subnet_id": "subnet-0c044b074207ac98a",
         "source_ami": "ami-08c40ec9ead489470",
         "ssh_username": "ubuntu"
     },
@@ -21,7 +21,7 @@
             "ami_name": "csye6225_{{timestamp}}",
             "ami_description": "My-Ubuntu-Pro-22.04 for csye6225",
             "ami_users": [
-                "703825373370"
+                "454261061886"
             ],
             "ami_block_device_mappings": [
                 {
