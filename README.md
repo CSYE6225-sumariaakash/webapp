@@ -2,8 +2,7 @@
 CSYE-6225 Akash Sumaria webapp.
 
 # NUID : 001568622 
-# #Name - Akash Sumaria 
-
+# #Name - Akash Sumaria
 
 Reference API documentation
 Swaggerhub: https://app.swaggerhub.com/apis-docs/fall2022-csye6225/cloud-native-webapp/assignment-02. 
