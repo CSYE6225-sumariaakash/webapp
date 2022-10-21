@@ -65,11 +65,11 @@ build {
   sources = ["source.amazon-ebs.my-ami"]
 
   provisioner "file" {
-    source = "C:\Users\akash\Downloads\assignment2\assignment2\webapp\src\webapp.zip"
+    source = "./webapp.zip"
     destination = "/home/ubuntu/webapp.zip"
   }
 
   provisioner "shell" {
-    script="C:\Users\akash\Downloads\assignment2\assignment2\webapp\src\packer\app.sh"
+    script="./app.sh"
   }
 }
