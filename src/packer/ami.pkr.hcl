@@ -65,21 +65,11 @@ build {
   sources = ["source.amazon-ebs.my-ami"]
 
   provisioner "file" {
-    source = "../webapp.zip"
+    source = "C:\Users\akash\Downloads\assignment2\assignment2\webapp\src\webapp.zip"
     destination = "/home/ubuntu/webapp.zip"
   }
 
   provisioner "shell" {
-    script="./app.sh"
-    // environment_vars = [
-    //   "DEBIAN_FRONTEND=noninteractive",
-    //   "CHECKPOINT_DISABLE=1"
-    // ]
-    // inline = [
-    //   "sudo apt-get update",
-    //   "sudo apt-get upgrade -y",
-    //   "sudo apt-get install nginx -y",
-    //   "sudo apt-get clean",
-    // ]
+    script="C:\Users\akash\Downloads\assignment2\assignment2\webapp\src\packer\app.sh"
   }
 }
