@@ -16,6 +16,6 @@ As a user, I expect the code quality of the application is maintained to the hig
 Use below commands to install, and run the application.
 To install -> npm install
 To start the application -> npm start
-To test -> npm test (No UI so test via POSTMAN)
+To test -> npm test (No UI so test via POSTMAN).
 
 
