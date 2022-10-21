@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../app.js';
+import app from '../index.js';
 
 const { expect } = chai;
 
@@ -15,6 +15,15 @@ describe('healthz', () =>{
                 .end((err, response) => {
                     if(err) done(err);
                     expect(response).to.have.status(200);
+                    done();
+                });
+        });
+        it("Return status code 200 OK", (done) => {
+            chai.request(app)
+            .get("/health")
+                .end((err, response) => {
+                    if(err) done(err);
+                    expect(response).to.have.status(404);
                     done();
                 });
         });
