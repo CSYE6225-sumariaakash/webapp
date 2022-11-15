@@ -1,34 +1,42 @@
-# webapp
-CSYE-6225 Akash Sumaria webapp.
+# CSYE6225: Assignment-05
 
-# NUID : 001568622 
-# #Name - Akash Sumaria
+001568622 Akash Sumaria  demo hello
 
-Application Logging & Metrics
-AMI Updates
-Update your packer template to install Links to an external site. the Unified CloudWatch Agent Links to an external site. in your AMIs.
-Your CloudWatch agent must be set up to start automatically when an EC2 instance is launched using your AMI.
-IAM Updates
-Update the CloudFormation template to Update the IAM role attached to the EC2 instance for use with CloudWatch Agent Links to an external site..
-WebApp User Stories
-As a user, I want all application log data to be available in CloudWatch.
-As a user, I want metrics on API usage available in CloudWatch.
-Create the following custom metrics for every API we have implemented in the web application. The metrics data should be collected in CloudWatch.
-Count the number of times each API is called.
-You can retrieve custom metrics using either StatsD Links to an external site. or collectd Links to an external site..
+This is a README file of Assignment_04 for the course INFO6225.
 
-Reference API documentation
-Swaggerhub: https://app.swaggerhub.com/apis-docs/fall2022-csye6225/cloud-native-webapp/assignment-02. 
+1. Clone the repository.
+```bash
+git clone <repo SSH protocol>
+```
 
-Requirements
-All API request/response payloads should be in JSON.
-No UI should be implemented for the application.
-As a user, I expect all API calls to return with a proper HTTP status code.
-As a user, I expect the code quality of the application is maintained to the highest standards using the unit and/or integration tests.
+2. Navigate to project directory.
+```bash
+cd <path to cloned directory>
+```
 
-Use below commands to install, and run the application.
-To install -> npm install
-To start the application -> npm start
-To test -> npm test (No UI so test via POSTMAN).
+3. Run 
+```bash
+npm install
+```
 
+4. Install Browser/Postman to view running application.
+```bash
+npm start
+```
+5. Run Packer command 
+```bash
+    packer build <file name .pkr.hcl>
+```
+6. Run AWS Cloud Formation Command by Passing the parameter
+```bash
+aws cloudformation create-stack --stack-name teststack14 --template-body file://csye6225-infra.yaml --parameters ParameterKey=VpcCidrBlock,ParameterValue=10.0.0.0/16 ParameterKey=SubnetCidrBlock1,ParameterValue=10.0.1.0/24 ParameterKey=SubnetCidrBlock2,ParameterValue=10.0.2.0/24 ParameterKey=SubnetCidrBlock3,ParameterValue=10.0.3.0/24 ParameterKey=ImageId,ParameterValue=' AMI-ID’
+```
+## Technologies
 
+Language: JavaScript,
+
+Runtime Environment: NodeJs, 
+ 
+FrameWork: ExpressJs
+
+Database: MySql
