@@ -1,31 +1,31 @@
-import express from 'express';
-import router from './src/route/routhealthz.js';
-import bodyParser from 'body-parser';
-import db from './src/models/index.js';
-import user_router from './src/route/userRoute.js';
+const express = require('express');
+const router = require('./routes/router.js');
+const bodyParser = require('body-parser');
+const db = require("./config/sequelizeDB.js");
+const baseAuthentication = require('./util/auth.js');
 
 const app = express();
-//either use env variable port or 3000
-const port = process.env.PORT || 3000;
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}))
+app.use("/",router);
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, x-access-token"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Access-Control-Request-Headers", "x-access-token");
+    next();
+});
 
 db.sequelize.sync();
 
-//parsing incoming request bodies
-app.use(bodyParser.urlencoded({ extended: true }))
-//json used
-app.use(bodyParser.json())
-app.use(router);
+const port = process.env.PORT || 3000;
 
-app.use(user_router);
-
-//landing page
-app.get('/', (req, res) => {
-  res.send("Assignment1");
+module.exports = app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
 
-//application listens/run on port
-app.listen(port, () => {
-  console.log(`App is listening on port ${port}`);
-});
-
-export default app;
+module.exports = app;

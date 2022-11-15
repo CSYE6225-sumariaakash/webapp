@@ -1,7 +1,0 @@
-PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=Akash@123
-DB_NAME=usersDB
-AWS_REGION=us-east-1
-AWS_BUCKET_NAME=csye6225
