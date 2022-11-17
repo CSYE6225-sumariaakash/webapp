@@ -76,11 +76,12 @@ async function updateUserDoc(req, res, next) {
 // Get doc
 
 async function getUserDoc(req, res, next) {
+    let id = req.params.id
     const user = await getUserByUsername(req.user.username);
     console.log(user)
     var doc = await Doc.findOne({
         where: {
-            user_id: user.id
+            user_id: user.id, id: id
         }
     });
 
