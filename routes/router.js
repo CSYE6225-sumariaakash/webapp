@@ -9,7 +9,14 @@ const SDC = require('statsd-client');
 const sdc = new SDC({host: dbConfig.METRICS_HOSTNAME, port: dbConfig.METRICS_PORT});
 var start = new Date();
 
+
 // GET Method
+
+// router.get("/", (req, res) => {
+//     console.log("Connected to API")
+//     logger.info("API working as expected");
+//     res.sendStatus(200).json();
+// });
 
 router.get("/healthz", (req, res) => {
     console.log("Connected to API")
@@ -49,5 +56,10 @@ router.get("/v1/documents", baseAuthentication(), docController.getUserDocAll);
 // Delete Doc
 
 router.delete("/v1/documents/:id", baseAuthentication(), docController.deleteUserDoc);
+
+
+// Verify User
+
+router.get("/v1/verify", userController.verifyUser);
 
 module.exports = router;
