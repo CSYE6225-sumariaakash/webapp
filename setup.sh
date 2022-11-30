@@ -20,8 +20,11 @@ sudo curl -o /root/amazon-cloudwatch-agent.deb https://s3.amazonaws.com/amazoncl
 sudo dpkg -i -E /root/amazon-cloudwatch-agent.deb
 echo "Setup CW agent"
 sleep 10
-unzip webappDEV.zip
-cd webappDEV/ && npm i
+unzip webappDEV.zip -d webappDEV
+echo "installing npm"
+# sudo apt npm i
+sleep 30
+cd webappDEV && npm i
 pwd
 echo "Before starting CW"
 #start cloudwatch agent
@@ -31,6 +34,7 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
 -c file:/home/ubuntu/webappDEV/statsd/config.json \
 -s
 echo "Setup statsd"
+# sudo npm i
 sudo pm2 start index.js
 sudo pm2 ls
 sudo pm2 save

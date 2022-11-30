@@ -1,6 +1,6 @@
-# CSYE6225: Assignment-05
+# CSYE6225: Assignment-08
 
-001568622 Akash Sumaria  demo hello
+001568622 Akash Sumaria
 
 This is a README file of Assignment_04 for the course INFO6225.
 
@@ -40,3 +40,22 @@ Runtime Environment: NodeJs,
 FrameWork: ExpressJs
 
 Database: MySql
+
+
+## Requirements
+
+Web Application Updates
+For this assignment, we will update our web application to verify the user's email address on sign-up. The email verification flow should be as follows:
+
+The user creates a new account.
+The web application creates a one-time use token (stored in the DynamoDB, schema/model not included in swagger) and posts a message to the SNS topic. The message includes the following at minimum:
+User's email address.
+One-time use token.
+Message Type
+The one-time-use token should be valid for only 5 minutes after creation. Use the DynamoDB TTL feature Links to an external site.to implement this. 
+SNS will trigger the Lambda function which will send an email to the user. The email message must include a valid link to your domain (which is environment-specific i.e. in dev, the link should be for the dev subdomain). Example link: http://prod.domain.tld/v1/verifyUserEmail?email=user@example.com&token=sometoken Links to an external site. 
+The email message should have proper DKIM signature and SPF records.
+The email message should not end up in the user's SPAM/Junk folder.
+When the user clicks on the link (while it is valid), the user should be marked as verified.
+Unverified users should not be able to make any authenticated API call until they have verified their account.
+We will not implement an API for users to request a new one-time-use token to verify the user account. 

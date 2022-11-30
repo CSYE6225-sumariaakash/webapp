@@ -5,7 +5,6 @@ const db = require("./config/sequelizeDB.js");
 const baseAuthentication = require('./util/auth.js');
 
 const app = express();
-app.use(bodyParser.json())
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}))
 app.use("/",router);
