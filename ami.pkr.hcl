@@ -37,15 +37,15 @@ build {
     sources = [ 
         "source.amazon-ebs.my-ami"
     ]
-    // provisioner "file" {
-    //     source = "./webapp.service"
-    //     destination = "/tmp/webapp.service"
-    // }
     provisioner "file" {
         source = "./webappDEV.zip"
         destination = "/home/${var.ssh_username}/webappDEV.zip"
     }
     provisioner "shell" {
         script = "./setup.sh"
+    }
+    post-processor "manifest" {
+        output = "manifest.json"
+        strip_path = true
     }
 }
