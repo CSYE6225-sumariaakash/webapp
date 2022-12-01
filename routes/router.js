@@ -19,6 +19,12 @@ router.get("/healthz", (req, res) => {
     res.sendStatus(200).json();
 });
 
+// router.get("/health", (req, res) => {
+//     console.log("Connected to API")
+//     logger.info("/healthz working as expected");
+//     res.sendStatus(200).json();
+// });
+
 // POST Method
 
 router.post("/v1/account", userController.createUser);
