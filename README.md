@@ -1,4 +1,4 @@
-# CSYE6225: Assignment-08
+# CSYE6225: Assignment-09
 
 001568622 Akash Sumaria
 
@@ -59,3 +59,16 @@ The email message should not end up in the user's SPAM/Junk folder.
 When the user clicks on the link (while it is valid), the user should be marked as verified.
 Unverified users should not be able to make any authenticated API call until they have verified their account.
 We will not implement an API for users to request a new one-time-use token to verify the user account. 
+
+
+Secure Application Endpoints
+Warning: Do not store your SSL certificates in the GitHub repository.
+
+Secure your web application endpoints with valid SSL certificates.
+For dev environment, you may use the AWS Certificate Manager Links to an external site. service to get SSL certificates.
+For prod environment, you must request an SSL certificate from Namecheap Links to an external site.or any other SSL vendor except for AWS Certificate Manager, import it into AWS Certificate Manager Links to an external site. from your CLI, and then configure your load balancer to use the imported certificate.
+The command to import the certificate must be documented in your README.md file.
+Plain text requests sent to HTTP do not have to be supported.
+HTTP to HTTPS redirection is not required.
+Traffic from the load balancer to the EC2 instance can use plain text protocol such as HTTP.
+Users should not be able to connect to the EC2 instance directly.
